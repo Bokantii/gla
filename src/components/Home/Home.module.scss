@@ -1,0 +1,482 @@
+@import "./../../Main.scss";
+
+.home {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-direction: column;
+
+  .home_content {
+    @include container85;
+    // border: 1px solid green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    .hero {
+      background: linear-gradient(
+          to right bottom,
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.7)
+        ),
+        url("./../../../src/assets/m3.jpg") no-repeat;
+
+      clip-path: polygon(0 0, 100% 0, 100% 81%, 0% 100%);
+      @media screen and (max-width: 600px) {
+        text-align: center;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      }
+      .papa_teach {
+        scale: 0.6;
+        transition: 0.3s;
+
+        cursor: pointer;
+        @media screen and (max-width: 900px) {
+          display: none;
+        }
+      }
+
+      //   border: 1px solid red;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 0;
+      background-color: $medium-gray;
+      height: 80vh;
+      padding-bottom: 1rem;
+
+      //   margin-top: 1rem;
+      position: relative;
+      .hero_overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        // background-color: yellow;
+        opacity: 0.5;
+      }
+      .hero_content {
+        @include container85;
+      }
+      img {
+        width: 70%;
+      }
+      .hero_text {
+        display: flex;
+        flex-direction: column;
+        height: 60%;
+        margin-left: 7.5%;
+        color: #fff;
+        @media screen and (max-width: 900px) {
+          align-items: center;
+          text-align: center;
+        }
+        .heading {
+          font-size: 4rem;
+          font-weight: 500;
+          text-transform: capitalize;
+          @media screen and (max-width: 600px) {
+            font-size: 3rem;
+          }
+        }
+        .discover_more {
+          margin-top: 2rem;
+          padding: 0.9rem;
+          text-align: center;
+          background-color: #787675;
+          color: #fff;
+          width: 40%;
+          border-radius: 8px;
+          text-decoration: none;
+        }
+      }
+    }
+    .welcome_text {
+      @include container85;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 5rem;
+      @media screen and (max-width: 900px) {
+        flex-direction: column;
+        text-align: center;
+      }
+      .welcome_text_left {
+        width: 70%;
+        @media screen and (max-width: 900px) {
+          width: 100%;
+          text-align: center;
+        }
+        .welcome_to_ {
+          font-size: 1.1rem;
+          color: red;
+        }
+        .gla_ {
+          font-size: 3rem;
+          font-weight: 500;
+        }
+      }
+      .gla_desc {
+        color: #545654;
+      }
+    }
+    /*congregation start*/
+    .congregation {
+      //   border: 1px solid red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 3rem;
+      clip-path: polygon(0 0, 100% 7%, 100% 79%, 0% 100%);
+      background: linear-gradient(
+          to right bottom,
+          rgba(80, 118, 135, 0.8),
+          rgba(56, 75, 112, 0.8)
+        ),
+        url("./../../assets/churchm.jpg");
+      background-size: cover;
+      background-position: top;
+      height: 97vh;
+      color: #fff;
+      margin-top: 8rem;
+      @media screen and (max-width: 600px) {
+        text-align: center;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      }
+      .congregation_content {
+        @include container85;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80%;
+        margin-top: -4rem;
+
+        .congregation_content_text {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .living_church {
+            color: #e12c6f;
+            font-size: 1.4rem;
+          }
+          .shift {
+            font-size: 2rem;
+          }
+          .body_congregation_text {
+            margin-top: 1.3rem;
+          }
+        }
+      }
+    }
+    /*congregation end*/
+    // testimonies start
+    .testimonies {
+      //   border: 1px solid blue;
+      margin-top: 4rem;
+      @include container85;
+      display: flex;
+      flex-direction: column;
+      .testifiers {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3rem;
+        @media screen and (max-width: 600px) {
+          flex-direction: column;
+        }
+
+        .testifier {
+          position: relative;
+          background-color: #fff;
+          transition: 0.5s;
+          width: 350px;
+          height: 350px;
+          border-radius: 8px;
+          @media screen and (max-width: 900px) {
+            width: 25vw;
+          }
+          @media screen and (max-width: 600px) {
+            width: 100%;
+            margin-top: 1rem;
+          }
+
+          cursor: pointer;
+          &:hover .testifierImg {
+            width: 25%;
+            height: 25%;
+            border-radius: 50%;
+            top: 40px;
+            left: 100%;
+            transform: translateX(150%);
+            border: 2px solid $teal-blue;
+            margin-top: 1rem;
+
+            img {
+              border-radius: 50%;
+            }
+          }
+          &:hover .face1 {
+            z-index: 1;
+          }
+          .face {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+          }
+          .face1 {
+            padding: 20px;
+            text-align: center;
+            z-index: -5;
+            // background-color:#fff;
+          }
+          .testifierImg {
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            border-radius: 8px;
+            transition: 0.5s;
+
+            img {
+              width: 100%;
+              height: 100%;
+              border-radius: 8px;
+            }
+          }
+
+          &:hover {
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
+          }
+        }
+      }
+    }
+    // testimonies end
+    // ==================================
+    //sermons start
+    .sermons {
+      margin-top: 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      width: 100vw;
+      background-color: #fff;
+      padding: 3rem 0;
+      background: linear-gradient(
+          to right bottom,
+          rgba(0, 0, 0, 0.3),
+          rgba(0, 0, 0, 0.6)
+        ),
+        url("./../../../src/assets/m6.jpg") no-repeat;
+      h1 {
+        font-size: 1.8rem;
+        color: #fff;
+        text-transform: uppercase;
+      }
+      p {
+        color: #fff;
+      }
+      .sermon_videos {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        @include container85;
+        margin-top: 1rem;
+        @media (max-width: 600px) {
+          flex-direction: column;
+          gap: 0.7rem;
+        }
+        iframe {
+          width: 350px;
+          height: 315px;
+          @media (max-width: 900px) {
+            width: 250px;
+            height: 215px;
+          }
+          @media (max-width: 850px) {
+            width: 200px;
+            height: 215px;
+          }
+          @media (max-width: 800px) {
+            width: 200px;
+            height: 215px;
+          }
+          @media (max-width: 750px) {
+            width: 180px;
+            height: 215px;
+          }
+          @media (max-width: 600px) {
+            width: 90%;
+            height: 215px;
+          }
+        }
+      }
+    }
+    //sermons end
+    // ==================================
+    .meet_pastors {
+      width: 500px;
+      height: 300px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      //   border: 1px solid red;
+      border-radius: 20px;
+      background-color: black;
+      background-image: linear-gradient(45deg, $navy_blue, $wine, $pinkish);
+      margin-top: 10rem;
+      @media screen and (max-width: 600px) {
+        width: 300px;
+        height: 170px;
+      }
+      .papaNmama {
+        cursor: pointer;
+        transition: 0.5s;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+
+        // scale: 0.8;
+        height: 120%;
+        width: 100%;
+        clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+        @media screen and (max-width: 600px) {
+          transform: translateX(0) scale(0.5);
+          left: 0;
+          height: 120%;
+          width: 100%;
+        }
+      }
+      &:hover .papaNmama {
+        scale: 0.9;
+        
+      }
+
+      .meet_pastors_content {
+        width: 40%;
+        left: 20%;
+        color: #fff;
+        position: relative;
+        opacity: 0;
+        font-size: 1.5rem;
+        @media screen and (max-width: 600px) {
+          display: none;
+        }
+      }
+      &:hover .meet_pastors_content {
+        opacity: 1;
+        left: 5%;
+      }
+    }
+    .flip_cards {
+      width: 85vw; // Takes up 85% of the viewport width
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+
+      @media screen and (max-width: 900px) {
+        flex-direction: column;
+      }
+    }
+
+    .flip_card {
+      background-color: transparent;
+      width: 250px;
+      height: 250px;
+      perspective: 1000px;
+      @media screen and (max-width: 900px) {
+        width: 100%;
+        margin-top: 1rem;
+        img {
+          width: 100%;
+        }
+      }
+      .flip_card_inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+        &:hover {
+          transform: rotateY(180deg);
+        }
+
+        .flip_card_front,
+        .flip_card_back {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          border-radius: 8px;
+          cursor: pointer;
+          img {
+            border-radius: 8px;
+          }
+        }
+
+        .flip_card_front {
+          background-color: #bbb;
+          color: black;
+          @media screen and (max-width: 900px) {
+            background-color: transparent;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .flip_card_back {
+          background-color: #fff;
+          color: black;
+          transform: rotateY(180deg);
+          padding: 1rem 0.8rem 0;
+
+          .flip_card_back_heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            h2 {
+              font-size: 1rem;
+            }
+            img {
+              background-color: black;
+              height: 3.125rem;
+              width: 3.125rem;
+            }
+          }
+          p {
+            text-align: left;
+          }
+
+          h1 {
+            margin: 0;
+            font-size: 24px;
+          }
+
+          p {
+            margin: 5px 0;
+          }
+        }
+      }
+    }
+  }
+}

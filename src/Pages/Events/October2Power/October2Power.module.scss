@@ -1,0 +1,156 @@
+@import './../../../Main.scss';
+.home {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4dfad;
+  .hero {
+    width: 100vw;
+    height: 100vh;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 83%);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("./../../../assets/heroImg.jpeg") no-repeat;
+
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.3s;
+    .october2_power_conference {
+      font-size: 6rem;
+      text-transform: uppercase;
+      @include respond(phone) {
+        font-size: 1rem;
+      }
+      @include respond(tab-land) {
+        font-size: 4rem;
+      }
+    }
+    .registration {
+      border: 1px solid #fff;
+      text-decoration: none;
+      color: #fff;
+      cursor: pointer;
+      padding: 1rem;
+      text-transform: uppercase;
+      margin-top: 0.7rem;
+      transition: 0.5s ease;
+      &:hover {
+        background-color: #fff;
+        color: #000;
+        border: none;
+      }
+    }
+    // @include respond(phone){
+    //   font-size: 2rem;
+    // }
+  }
+  .about_conference {
+    @include container85;
+  }
+  .speakers_section {
+    @include container85;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    .speakers {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      height: 60vh;
+      @include respond(phone) {
+        flex-direction: column;
+        height: 120vh;
+      }
+
+      img {
+        width: 49%;
+        @include respond(phone) {
+          width: 100%;
+        }
+      }
+    }
+    .joinUs {
+      text-decoration: none;
+      color: red;
+      font-size: 2rem;
+      margin-top: 1rem;
+    }
+  }
+  .schedule {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 2rem;
+  }
+  .venue_and_directions {
+    width: 100vw;
+    margin-top: 3rem;
+    .map_link {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .videoBackground {
+    width: 100vw;
+    position: relative;
+    margin-top: 2rem;
+    video {
+      width: 100%;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    }
+  }
+  @mixin respond($breakpoint) {
+    @if $breakpoint==phone {
+      @media (max-width: 37.5em) {
+        //600px
+        @content;
+      }
+    }
+    @if $breakpoint==tab-port {
+      @media (max-width: 56.25em) {
+        //900px
+        @content;
+      }
+    }
+    @if $breakpoint==tab-land {
+      @media (max-width: 75em) {
+        //1200px
+        @content;
+      }
+    }
+    @if $breakpoint==big-desktop {
+      @media (min-width: 112.5em) {
+        //1800px
+        @content;
+      }
+    }
+  }
+
+  html {
+    font-size: 75%; //1rem = 10px, 10px/16px = 62.5%
+    @include respond(tab-port) {
+      font-size: 50%; //1rem = 8px, 8px/16px = 50%
+    }
+    @include respond(tab-land) {
+      font-size: 56.25%; //1rem = 9px, 9px/16px = 56.25%
+    }
+    @include respond(big-desktop) {
+      font-size: 75%; //1rem = 12px, 12px/16px = 75%
+    }
+  }
+}

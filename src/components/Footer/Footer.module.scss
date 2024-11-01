@@ -1,0 +1,109 @@
+@import "./../../Main.scss";
+
+.footer {
+  width: 100vw;
+  margin-top: 5rem;
+  background-color: #000000;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+
+  .footer_content {
+    @include container85;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .footer_content_top {
+      display: flex;
+      justify-content: space-between;
+      @media screen and (max-width: 900px) {
+        flex-direction: column;
+      }
+
+      .footer_content_top_left {
+        width: 30%;
+        @media screen and (max-width: 900px) {
+          width: 100%;
+        }
+        .socials {
+          margin-top: 1rem;
+        }
+      }
+      .explore {
+        width: 30%;
+
+        @media screen and (max-width: 900px) {
+          width: 100%;
+          margin-top: 1rem;
+        }
+        .lists {
+          display: flex;
+          justify-content: space-between;
+
+          ul li {
+            list-style-type: none;
+            line-height: 2rem;
+            a {
+              color: #fff;
+              text-decoration: none;
+              display: flex;
+              flex-direction: column;
+              flex-wrap: wrap;
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+      .newsletter {
+        // width: 50%;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @media screen and (max-width: 900px) {
+          width: 100%;
+          margin-top: 1rem;
+          h2,p,form{
+            margin-top: .6rem;
+          }
+        }
+        form {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 3rem;
+          background-color: #fff;
+          input {
+            width: 80%;
+            outline: none;
+            border: none;
+            padding: 0.8rem;
+            background-color: #fff;
+            border-radius: 8px;
+          }
+          button {
+            border: 1px solid navy;
+            padding: 1rem;
+            width: 10%;
+            cursor: pointer;
+            border-radius: 8px;
+            height: 80%;
+            background-color: blue;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 3rem;
+    }
+  }
+}
